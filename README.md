@@ -2,17 +2,7 @@
 
 ## Docker container image build for Fluree Community Edition
 
-This project provides an example of how to serve a stand-alone Fluree instance in a Docker container. 
-
-### Notable Mentions
-- This Docker set-up corresponds to the *default* configuration of a stand-alone Fluree instance:
-    - Uses the default private key file generated when Fluree starts up.
-    - Uses the default authorization schema created by Fluree.
-    - Exposes HTTP port (8080) to the container host machine.  This is the default port for the Fluree Admin UI in v0.11.x and previous.
-    - Exposes HTTP port (9790) to the container network, but not to the host machine.  This is the default port for the Fluree consensus network.
-- Any customizations to the Fluree network configuration may require updates to Dockerfile and rebuilding the Docker container image.  
-    - A sample properties file is included in the Fluree archive (named: fluree_sample.properties).
-    - The sample properties identify the default network configuration for a stand-alone Fluree instance.
+This project provides an example of how to serve a stand-alone Fluree instance in a Docker container.
 
 **Note**: *This project does not include a distribution of Fluree.  You can download the latest distribution of Fluree Community Edition from https://flur.ee*
 
@@ -20,7 +10,7 @@ This project provides an example of how to serve a stand-alone Fluree instance i
 
 ## First time build steps
 
-1. Clone / download the files from this project in a local directory.  Do not download into the root directory.  
+1. Clone / download the files from this project into a local directory.  Do not download into the root directory.  
 
 2. Create a "fluree" subdirectory in the same directory as the files (downloaded) for this project.
 
