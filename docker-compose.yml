@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+
+  fluree:
+    build: .
+    image: fluree:latest
+    container_name: fluree
+    ports:
+     - "8080:8080"
