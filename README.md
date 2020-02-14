@@ -5,9 +5,36 @@
 This project provides an example of how to serve a stand-alone Fluree instance in a Docker container.
 
 **Note**: *This project does not include a distribution of Fluree.  You can download the latest distribution of Fluree Community Edition from https://flur.ee*
+&nbsp;
+   
+
+---
+#### Customizing Fluree 
+The project configuration works with fluree 'out-of-the-box'.  However, every Fluree configuration setting can be overridden using environment variables.  Docker allows you to override the default container definition at run-time using its command-line interfaces (CLIs).  
+
+Assuming that 'fluree' is the name of the container service, some examples of run-time overrides are:
+
+- setting the private-key for the ledger group:
+
+    `docker run -e FDB-GROUP-PRIVATE-KEY=abc123 fluree`
+
+- setting up a server farm and identifying the current server:
+    
+    `docker run -e FDB-GROUP-SERVERS="server1@localhost:9790;server2@localhost:9790;server3@localhost:9790" -e FDB-GROUP-THIS-SERVER=server1 fluree`
+
+- setting the api port and configuring a closed api:
+
+    `docker run -e FDB-API-PORT=8090 -e FDB-API-OPEN=false -p 8090:8090/tcp fluree`   
+&nbsp;
+
+#### For More Information
+Information regarding configurable Fluree settings is available online. The `Getting Started -> Installation` section provides insight on installing and customizing Fluree (https://docs.flur.ee/docs/getting-started/installation).
+
+Docker CLI documentation is also available online at https://docs.docker.com/engine/reference/commandline/cli/.    
 
 &nbsp;
 
+---
 ## First time build steps
 
 1. Clone / download the files from this project into a local directory.  Do not download into the root directory.  
@@ -20,18 +47,17 @@ This project provides an example of how to serve a stand-alone Fluree instance i
 
 5. Open a command line/terminal session.  Change to project directory  (created in step 1).  
 
-6. Execute `"docker-compose build"`
+6. Execute `docker-compose build`
 
-7. Execute `"docker-compose run --name fluree1 --service-ports fluree"`
+7. Execute `docker-compose run --name fluree1 --service-ports fluree`
 
 8. Browse to "http://localhost:8080" on the container host machine to get to the Fluree Admin UI.  
 &nbsp;
 
 ## Verify container
+The Docker Dashboard is useful to verify/access the container and fluree service.  Via the dashboard, you can inspect environment settings, review logs, open a CLI terminal session and even browse to the Fluree Admin UI site.
 
-The Docker Dashboard is very useful to verify/access the container and fluree service.
-
-If you are a command-line aficionado, below is a sampling of Docker CLIs to verify the Fluree service running in a docker container:
+If you are a command-line aficionado, the following commands are useful to verify that your Fluree service is up and running:
 &nbsp;
 
 ---
