@@ -21,7 +21,8 @@ This repository does not include a distribution of Fluree. You can download:
 
 
 ```
-(this is an example. This may be different depending on your operating system on the Fluree version you download).
+(this is an example. This may be different depending on your 
+operating system or the Fluree version you download).
 
 wget https://fluree-releases-public.s3.amazonaws.com/fluree-stable.zip
 
