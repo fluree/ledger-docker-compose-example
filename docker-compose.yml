@@ -1,9 +1,18 @@
 version: '3.7'
 services:
 
-  fluree:
-    build: .
-    image: fluree:latest
-    container_name: fluree
+  fluree-n1:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: fluree1
+    networks:
+        - default
+    environment: 
+        fdb_group_servers: server1@host.docker.internal:9790
+        fdb_group_this_server: server1
+        fdb_api_port: 8080
+        fdb_group_port: 9790
     ports:
-     - "8080:8080"
+     - "8080:8080" 
+     - "9790:9790"

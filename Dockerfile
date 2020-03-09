@@ -1,12 +1,15 @@
 FROM openjdk:8 AS Fluree
 LABEL Description="Fluree Community Edition - Docker Image"
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL maintainer="flureeadmin@flur.ee"
-ADD fluree/* /usr/local/fluree/
+COPY fluree/* /usr/local/fluree/
 
-ENV fdb-group-private-key-file "/opt/fluree/default_private_key.txt"
+ENV fdb_group_servers ${fdb_group_servers}
+ENV fdb_group_this_server ${fdb_group_this_server}
+ENV fdb_api_port ${fdb_api_port}
+
 VOLUME /opt/fluree /opt/fluree
 
 ENTRYPOINT ["/usr/local/fluree/fluree_start.sh"]
-EXPOSE 8080
-EXPOSE 9790
+EXPOSE ${fdb_api_port}
+EXPOSE ${fdb_group_port}

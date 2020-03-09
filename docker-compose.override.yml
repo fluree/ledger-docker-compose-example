@@ -1,0 +1,54 @@
+version: '3.7'
+x-group-servers:
+  &group-servers
+  server1@host.docker.internal:9790,server2@host.docker.internal:9791,server3@host.docker.internal:9792
+  
+# comment out the below services to run a single-node Fluree network
+services:
+  fluree-n1:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: fluree1
+    environment: 
+      fdb_group_servers: *group-servers
+      fdb_group_this_server: server1
+      fdb_api_port: 8080
+      fdb_group_port: 9790
+    networks:
+        - default
+    ports:
+     - "8080:8080" 
+     - "9790:9790"
+
+  fluree-n2:
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      container_name: fluree2
+      environment:
+        fdb_group_servers: *group-servers
+        fdb_group_this_server: server2
+        fdb_api_port: 8081
+        fdb_group_port: 9791
+      networks:
+        - default
+      ports:
+      - "8081:8081" 
+      - "9791:9791"
+
+  fluree-n3:
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      container_name: fluree3
+      environment:
+        fdb_group_servers: *group-servers
+        fdb_group_this_server: server3
+        fdb_api_port: 8082
+        fdb_group_port: 9792
+      networks:
+        - default
+      ports:
+      - "8082:8082" 
+      - "9792:9792"
