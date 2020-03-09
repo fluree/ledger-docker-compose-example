@@ -1,6 +1,6 @@
 # fluree-docker-example
 
-This project provides an example of how to serve Fluree instance in a Docker container.
+This project provides an example of how to serve Fluree instances in a Docker container.
 
 ## Get Started
 
