@@ -12,9 +12,6 @@ git clone https://github.com/fluree/fluree-docker-example.git
 cd fluree-docker-example
 ```
 
-
-2. Execute `docker-compose build` to build.
-
 #### Single-Node Fluree
 
 If you want to run Fluree as a single, centralized server, you can do so by going to `docker-compose.cluster.yml` and commenting out everything below the line that says `# comment out the below services to run a single-node Fluree network`.
@@ -25,7 +22,7 @@ Navigate to `http://localhost:8090/` to see the administrative user interface.
 
 #### Multi-Node Fluree
 
-To run a Fluree network with three servers, simply issue: `docker-compose up -f docker-compose.cluster.yml`. 
+To run a Fluree network with three servers, simply issue: `docker-compose -f docker-compose.cluster.yml up`. 
 
 If you want to run a network with a different number of servers, you can edit the `docker-compose.cluster.yml` file to include more servers. 
 
