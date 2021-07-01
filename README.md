@@ -1,3 +1,5 @@
+**Deprecation notice:** This repo is outdated. You should use our [official Docker image](https://hub.docker.com/repository/docker/fluree/ledger) now.
+
 # fluree-docker-example
 
 This project provides an example of how to serve Fluree instances in Docker containers.
