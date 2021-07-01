@@ -1,7 +1,7 @@
 version: '3'
 services:
   ledger1:
-    image: fluree/ledger:main
+    image: fluree/ledger
     ports:
       - 8091:8090
       - 9791:9791
@@ -10,7 +10,7 @@ services:
       fdb_group_this_server: server1
       fdb_group_port: 9791
   ledger2:
-    image: fluree/ledger:main
+    image: fluree/ledger
     ports:
       - 8092:8090
       - 9792:9792
@@ -19,7 +19,7 @@ services:
       fdb_group_this_server: server2
       fdb_group_port: 9792
   ledger3:
-    image: fluree/ledger:main
+    image: fluree/ledger
     ports:
       - 8093:8090
       - 9793:9793
