@@ -61,9 +61,9 @@ If you are a command-line aficionado, the following commands are useful to verif
 
 **command**: `docker ps`
 
-| CONTAINER ID | IMAGE         | COMMAND                | CREATED       | STATUS       | PORTS                            | NAMES   |
-| ------------ | ------------- | ---------------------- | ------------- | ------------ | -------------------------------- | ------- |
-| be006b7c70ec | fluree:latest | "/usr/local/fluree/f…" | 2 minutes ago | Up 2 minutes | 0.0.0.0:8080->8080/tcp, 9790/tcp | fluree1 |
+| CONTAINER ID | IMAGE                | COMMAND                | CREATED       | STATUS       | PORTS                            | NAMES   |
+| ------------ | -------------------- | ---------------------- | ------------- | ------------ | -------------------------------- | ------- |
+| be006b7c70ec | fluree/ledger:latest | "/usr/local/fluree/f…" | 2 minutes ago | Up 2 minutes | 0.0.0.0:8080->8080/tcp, 9790/tcp | fluree1 |
 
 ---
 
